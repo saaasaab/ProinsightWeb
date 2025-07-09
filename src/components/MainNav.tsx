@@ -8,7 +8,7 @@ export default function MainNav() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <nav className="main-nav">
+    <nav className={`main-nav ${theme}-theme`}>
       <div className="nav-container">
         <div className="nav-brand">
           <Link href="/" className="brand-link">

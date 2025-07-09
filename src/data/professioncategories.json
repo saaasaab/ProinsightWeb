@@ -1,0 +1,47 @@
+[
+  {
+    "categorycode": "category-asset",
+    "categoryname": "Asset"
+  },
+  {
+    "categorycode": "category-homeservice",
+    "categoryname": "Home Service"
+  },
+  {
+    "categorycode": "category-proinsight",
+    "categoryname": "ProInsight",
+    "isrole": true
+  },
+  {
+    "categorycode": "category-insurance",
+    "categoryname": "Insurance"
+  },
+  {
+    "categorycode": "category-investment",
+    "categoryname": "Investment"
+  },
+  {
+    "categorycode": "category-legal",
+    "categoryname": "Legal"
+  },
+  {
+    "categorycode": "category-mortgage",
+    "categoryname": "Mortgage"
+  },
+  {
+    "categorycode": "category-realestate",
+    "categoryname": "Real Estate"
+  },
+  {
+    "categorycode": "category-retirement",
+    "categoryname": "Retirement"
+  },
+  {
+    "categorycode": "category-tax",
+    "categoryname": "Tax"
+  },
+  {
+    "categorycode": "category-wealth",
+    "categoryname": "Wealth"
+  }
+]

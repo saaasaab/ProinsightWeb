@@ -22,11 +22,11 @@ export default function MapComponent() {
         attribution="&copy; OpenStreetMap contributors"
       />
       {/* Example marker, remove or replace as needed */}
-      <Marker position={[51.505, -0.09]}>
+      {/* <Marker position={[39.8283, -98.5795]}>
         <Popup>
           This Marker icon is displayed correctly with <i>leaflet-defaulticon-compatibility</i>.
         </Popup>
-      </Marker>
+      </Marker> */}
       {/* Pins/Markers will go here in the future */}
     </MapContainer>
   )

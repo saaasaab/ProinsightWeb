@@ -1,0 +1,346 @@
+[
+  {
+    "profession": "Attorney - Bankruptcy",
+    "professioncode": "profession-attorneybankruptcy",
+    "id": "c4c8f4a4-60af-4a2b-89c1-3f7a8a8f6c80",
+    "minimumtransactions": 0,
+    "partition": "c4c8f4a4-60af-4a2b-89c1-3f7a8a8f6c80",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Attorney - Estate/Probate",
+    "professioncode": "profession-estateattorney",
+    "id": "ac47293d-cadd-4bf6-8a82-8d3c34e1589e",
+    "minimumtransactions": 0,
+    "partition": "ac47293d-cadd-4bf6-8a82-8d3c34e1589e",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Attorney - Family Law",
+    "professioncode": "profession-attorneyfamilylaw",
+    "id": "d70b3c71-8032-4536-8979-8e1e11bdf07d",
+    "minimumtransactions": 0,
+    "partition": "d70b3c71-8032-4536-8979-8e1e11bdf07d",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Attorney - Real Estate",
+    "professioncode": "profession-attorneyrealestate",
+    "id": "b8c63d8e-e7b0-4c08-ae8b-9824c3bbfd8b",
+    "minimumtransactions": 0,
+    "partition": "b8c63d8e-e7b0-4c08-ae8b-9824c3bbfd8b",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Commercial Broker",
+    "professioncode": "profession-commercialbroker",
+    "id": "166a14cf-d7ec-428e-8800-8b1839ae37df",
+    "minimumtransactions": 0,
+    "partition": "166a14cf-d7ec-428e-8800-8b1839ae37df",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Commercial Lender",
+    "professioncode": "profession-commerciallender",
+    "id": "f4ebdd1f-e666-4973-931a-d10633b1667a",
+    "minimumtransactions": 0,
+    "partition": "f4ebdd1f-e666-4973-931a-d10633b1667a",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Electrical Professional",
+    "professioncode": "profession-electricalprofessional",
+    "id": "ee7159ef-d2e8-41ef-9627-075946d989ff",
+    "minimumtransactions": 0,
+    "partition": "ee7159ef-d2e8-41ef-9627-075946d989ff",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Estate Planning Coordinator",
+    "professioncode": "profession-estateplanningcoordinator",
+    "id": "fb2c9fd7-3a4e-4694-9a0f-1e7c848ad6c0",
+    "minimumtransactions": 0,
+    "partition": "fb2c9fd7-3a4e-4694-9a0f-1e7c848ad6c0",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Exterior Cleaning",
+    "professioncode": "profession-exteriorcleaning",
+    "id": "b7f3c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "minimumtransactions": 0,
+    "partition": "b7f3c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Financial Advisor",
+    "professioncode": "profession-financialadvisor",
+    "id": "39578cf4-9725-4c20-b9cb-31fb7c1802e7",
+    "minimumtransactions": 0,
+    "partition": "39578cf4-9725-4c20-b9cb-31fb7c1802e7",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Flooring Professional",
+    "professioncode": "profession-flooringprofessional",
+    "id": "ad0b81d5-43a1-4a26-8289-7e345faab7ae",
+    "minimumtransactions": 0,
+    "partition": "ad0b81d5-43a1-4a26-8289-7e345faab7ae",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "General Contractor",
+    "professioncode": "profession-generalcontractor",
+    "id": "bead0a0c-15a9-4e88-a1c5-930b0d779073",
+    "minimumtransactions": 0,
+    "partition": "bead0a0c-15a9-4e88-a1c5-930b0d779073",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "General Handyman",
+    "professioncode": "profession-generalhandyman",
+    "id": "2b3e9d7e-b44a-4b29-bc5e-750d220c75b0",
+    "minimumtransactions": 0,
+    "partition": "2b3e9d7e-b44a-4b29-bc5e-750d220c75b0",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Head Hunting Professional",
+    "professioncode": "profession-headhuntingprofessional",
+    "id": "9d4e5932-7a7c-4d62-bb3a-0920c35d7d3e",
+    "minimumtransactions": 0,
+    "partition": "9d4e5932-7a7c-4d62-bb3a-0920c35d7d3e",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "HVAC Professional",
+    "professioncode": "profession-hvacprofessional",
+    "id": "ec9a7d0d-098b-4b16-b5f7-1052a2e340b2",
+    "minimumtransactions": 0,
+    "partition": "ec9a7d0d-098b-4b16-b5f7-1052a2e340b2",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Insurance Professional",
+    "professioncode": "profession-insurancebroker",
+    "id": "97ea2a95-0173-4957-baf9-ba2f6d2c5254",
+    "minimumtransactions": 0,
+    "partition": "97ea2a95-0173-4957-baf9-ba2f6d2c5254",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Junk Removal",
+    "professioncode": "profession-junkremoval",
+    "id": "e3b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "minimumtransactions": 0,
+    "partition": "e3b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Landscaping Professional",
+    "professioncode": "profession-landscapingprofessional",
+    "id": "191905a1-2d42-4422-b105-b636681e3b15",
+    "minimumtransactions": 0,
+    "partition": "191905a1-2d42-4422-b105-b636681e3b15",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Moving Professional",
+    "professioncode": "profession-movingprofessional",
+    "id": "a60e45f1-6a28-47cb-bd6a-3d1ea6c8a4db",
+    "minimumtransactions": 0,
+    "partition": "a60e45f1-6a28-47cb-bd6a-3d1ea6c8a4db",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "New Home Builder",
+    "professioncode": "profession-newhomebuilder",
+    "id": "f4b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "minimumtransactions": 0,
+    "partition": "f4b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Painting Professional",
+    "professioncode": "profession-paintingprofessional",
+    "id": "b0215e5b-388c-42de-b13a-a406225f1f90",
+    "minimumtransactions": 0,
+    "partition": "b0215e5b-388c-42de-b13a-a406225f1f90",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Pest Control Professional",
+    "professioncode": "profession-pestcontrolprofessional",
+    "id": "8f8e2b79-6c7a-4453-97f3-9c735b0f7e70",
+    "minimumtransactions": 0,
+    "partition": "8f8e2b79-6c7a-4453-97f3-9c735b0f7e70",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Plumbing Professional",
+    "professioncode": "profession-plumbingprofessional",
+    "id": "21dcb8a5-9156-4c8c-8cb6-4f9b5d730bf1",
+    "minimumtransactions": 0,
+    "partition": "21dcb8a5-9156-4c8c-8cb6-4f9b5d730bf1",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Pool Service Professional",
+    "professioncode": "profession-poolserviceprofessional",
+    "id": "7eeb7cb0-5d73-4d40-97c4-f53ab781e539",
+    "minimumtransactions": 0,
+    "partition": "7eeb7cb0-5d73-4d40-97c4-f53ab781e539",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Property Inspector",
+    "professioncode": "profession-homeinspector",
+    "id": "11a9515d-fcef-4271-8653-ceb1624e4231",
+    "minimumtransactions": 0,
+    "partition": "11a9515d-fcef-4271-8653-ceb1624e4231",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Property Manager",
+    "professioncode": "profession-propertymanager",
+    "id": "45315688-4b4b-4aae-b736-d6414e0558b6",
+    "minimumtransactions": 0,
+    "partition": "45315688-4b4b-4aae-b736-d6414e0558b6",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Real Estate Agent",
+    "professioncode": "profession-realtor",
+    "id": "c071e86f-9357-4f6c-bc07-c25e7bb12e45",
+    "minimumtransactions": 18,
+    "partition": "c071e86f-9357-4f6c-bc07-c25e7bb12e45",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Residential Lender",
+    "professioncode": "profession-loanofficer",
+    "id": "7df5bc51-464e-4b3b-8bb4-f73d6cce1a04",
+    "minimumtransactions": 24,
+    "partition": "7df5bc51-464e-4b3b-8bb4-f73d6cce1a04",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Restoration Company",
+    "professioncode": "profession-restorationcompany",
+    "id": "d2b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "minimumtransactions": 0,
+    "partition": "d2b7c1b6-8f4e-4f3e-9f8e-3b8e8b8e8b8e",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Reverse Mortgage Professional",
+    "professioncode": "profession-reversemortgageprofessional",
+    "id": "25f69299-1453-4c9a-9430-3325944b02d5",
+    "minimumtransactions": 0,
+    "partition": "25f69299-1453-4c9a-9430-3325944b02d5",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Roofing Professional",
+    "professioncode": "profession-roofingprofessional",
+    "id": "eadb33a6-9f96-420e-9fcd-6554a9dd855f",
+    "minimumtransactions": 0,
+    "partition": "eadb33a6-9f96-420e-9fcd-6554a9dd855f",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Senior Advisor",
+    "professioncode": "profession-senioradvisor",
+    "id": "ec9aeef4-9187-4d04-a5c1-12b64915b184",
+    "minimumtransactions": 0,
+    "partition": "ec9aeef4-9187-4d04-a5c1-12b64915b184",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Solar Panel Professional",
+    "professioncode": "profession-solarpanelprofessional",
+    "id": "cbc8a0b7-2051-46f9-b78a-e5c432ed8a7a",
+    "minimumtransactions": 0,
+    "partition": "cbc8a0b7-2051-46f9-b78a-e5c432ed8a7a",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "profession": "Tax Professional",
+    "professioncode": "profession-taxprofessional",
+    "id": "bebf74f7-08d8-4175-8c16-2e8796928aaa",
+    "minimumtransactions": 0,
+    "partition": "bebf74f7-08d8-4175-8c16-2e8796928aaa",
+    "categorycode": "category-asset"
+  },
+  {
+    "profession": "Tree Trimming Professional",
+    "professioncode": "profession-treetrimmingprofessional",
+    "id": "bbf3b1e6-73a6-4a38-9617-df11ebd05107",
+    "minimumtransactions": 0,
+    "partition": "bbf3b1e6-73a6-4a38-9617-df11ebd05107",
+    "categorycode": "category-homeservice"
+  },
+  {
+    "isrole": true,
+    "profession": "Broker Owner",
+    "professioncode": "profession-proinsightbrokerowner",
+    "id": "c2b3d4e5-6789-4f01-2345-67890abcdef1",
+    "minimumtransactions": 0,
+    "partition": "c2b3d4e5-6789-4f01-2345-67890abcdef1",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Business Consultant",
+    "professioncode": "profession-proinsightbusinessconsultant",
+    "id": "b1a2c3d4-5678-4e90-1234-56789abcdef0",
+    "minimumtransactions": 0,
+    "partition": "b1a2c3d4-5678-4e90-1234-56789abcdef0",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Certified Coach",
+    "professioncode": "profession-coach",
+    "id": "adf4c269-0715-4e72-9952-4ae98c9207b0",
+    "minimumtransactions": 0,
+    "partition": "adf4c269-0715-4e72-9952-4ae98c9207b0",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Exit Strategist",
+    "professioncode": "profession-proinsightexitstrategist",
+    "id": "f5e6a7b8-9012-4c34-5678-90123abcdef4",
+    "minimumtransactions": 0,
+    "partition": "f5e6a7b8-9012-4c34-5678-90123abcdef4",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Network Advisor",
+    "professioncode": "profession-proinsightbuilder",
+    "id": "3fcd111d-0ad4-4019-a3f7-a5b894892913",
+    "minimumtransactions": 0,
+    "partition": "3fcd111d-0ad4-4019-a3f7-a5b894892913",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Team Leader",
+    "professioncode": "profession-proinsightteamleader",
+    "id": "d3c4e5f6-7890-4a12-3456-78901abcdef2",
+    "minimumtransactions": 0,
+    "partition": "d3c4e5f6-7890-4a12-3456-78901abcdef2",
+    "categorycode": "category-proinsight"
+  },
+  {
+    "isrole": true,
+    "profession": "Title Rep",
+    "professioncode": "profession-proinsighttitlerep",
+    "id": "e4d5f6a7-8901-4b23-4567-89012abcdef3",
+    "minimumtransactions": 0,
+    "partition": "e4d5f6a7-8901-4b23-4567-89012abcdef3",
+    "categorycode": "category-proinsight"
+  }
+
+]
