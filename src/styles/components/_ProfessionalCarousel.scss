@@ -1,0 +1,210 @@
+.professional-carousel {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+  
+  h3 {
+    margin: 0;
+    color: var(--gray-900);
+    font-size: var(--font-size-lg);
+  }
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  
+  .carousel-btn {
+    background-color: var(--gray-100);
+    color: var(--gray-600);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: var(--gray-200);
+      color: var(--gray-700);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  .carousel-indicator {
+    color: var(--gray-600);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    min-width: 40px;
+    text-align: center;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.professional-card {
+  padding: var(--spacing-6);
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.professional-avatar {
+  flex-shrink: 0;
+  
+  .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+  }
+}
+
+.professional-info {
+  flex: 1;
+  
+  h4 {
+    margin: 0 0 var(--spacing-2) 0;
+    color: var(--gray-900);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+  }
+  
+  .professional-title {
+    margin: 0 0 var(--spacing-1) 0;
+    color: var(--gray-700);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+  }
+  
+  .professional-company {
+    margin: 0 0 var(--spacing-4) 0;
+    color: var(--gray-600);
+    font-size: var(--font-size-sm);
+  }
+}
+
+.professional-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  
+  .rating-stars {
+    color: var(--accent-color);
+    font-size: var(--font-size-sm);
+  }
+  
+  .rating-number {
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+}
+
+.professional-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-6);
+  
+  .specialty-tag {
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: var(--primary-dark);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-header {
+    padding: var(--spacing-3);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+  
+  .professional-card {
+    padding: var(--spacing-4);
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+  
+  .professional-avatar {
+    align-self: center;
+    
+    .avatar-placeholder {
+      width: 60px;
+      height: 60px;
+      font-size: var(--font-size-lg);
+    }
+  }
+  
+  .professional-info {
+    text-align: center;
+  }
+  
+  .professional-specialties {
+    justify-content: center;
+  }
+} 

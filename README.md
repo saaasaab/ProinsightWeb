@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProInsight Web
+
+A professional insights and property analysis platform built with Next.js, TypeScript, and SCSS.
+
+## Project Structure
+
+```
+src/
+├── app/                          # Next.js App Router pages
+│   ├── layout.tsx               # Global layout with MainNav
+│   ├── page.tsx                 # Homepage
+│   ├── search/                  # Search functionality
+│   │   ├── layout.tsx           # Search layout
+│   │   ├── page.tsx             # Search page with filters
+│   │   ├── map/                 # Fullscreen map view
+│   │   │   └── page.tsx
+│   │   └── professionals/       # Professional management
+│   │       ├── [id]/            # Professional carousel by pin
+│   │       │   └── page.tsx
+│   │       └── client/          # Client profiles
+│   │           ├── [clientId]/
+│   │           │   └── page.tsx
+│   ├── deep-dive/               # Property analysis
+│   │   ├── page.tsx             # Portfolio overview
+│   │   └── property/            # Property details
+│   │       ├── [propertyId]/
+│   │       │   └── page.tsx
+│   └── profile/                 # User profiles
+│       ├── page.tsx             # Profile view
+│       └── edit/                # Profile editing
+│           └── page.tsx
+├── components/                   # Reusable components
+│   ├── MainNav.tsx             # Navigation component
+│   ├── SearchDropdown.tsx      # Search filters
+│   ├── MapPreview.tsx          # Interactive map
+│   ├── ProfessionalCarousel.tsx # Professional display
+│   ├── ClientIntroCard.tsx     # Client information
+│   ├── PropertyCard.tsx        # Property display
+│   └── ProfileForm.tsx         # Profile editing form
+├── lib/                         # Utility libraries
+│   ├── supabase.ts             # Supabase client
+│   ├── types.ts                # TypeScript types
+│   └── utils.ts                # Utility functions
+└── styles/                      # SCSS styling
+    ├── globals.scss            # Global styles and variables
+    └── components/             # Component-specific styles
+        ├── _MainNav.scss
+        ├── _MapPreview.scss
+        ├── _SearchDropdown.scss
+        ├── _PropertyCard.scss
+        ├── _ProfessionalCarousel.scss
+        ├── _ProfileForm.scss
+        ├── _ClientIntroCard.scss
+        ├── _HomePage.scss
+        ├── _SearchPage.scss
+        ├── _DeepDive.scss
+        ├── _Profile.scss
+        └── _ProfessionalPage.scss
+```
+
+## Features
+
+- **Search & Discovery**: Interactive map with property and professional search
+- **Professional Network**: Connect with real estate professionals
+- **Property Analysis**: Deep dive into property details and analytics
+- **User Profiles**: Manage personal and professional information
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: SCSS with CSS Modules
+- **Database**: Supabase (PostgreSQL)
+- **UI Components**: Custom components with modern design
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- Yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd proinsight-web
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add your Supabase credentials:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+4. Run the development server:
+```bash
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Available Scripts
 
-## Deploy on Vercel
+- `yarn dev` - Start development server with Turbopack
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn lint` - Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Styling Guidelines
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Uses SCSS with CSS custom properties for theming
+- Component-specific styles in `src/styles/components/`
+- Global styles and variables in `src/styles/globals.scss`
+- No BEM naming conventions - use semantic class names
+- Responsive design with mobile-first approach
+
+### Component Structure
+
+Each component follows a consistent pattern:
+- TypeScript interfaces for props
+- Client-side interactivity with `'use client'` directive
+- SCSS modules for styling
+- Responsive design considerations
+
+## Deployment
+
+The application can be deployed to Vercel, Netlify, or any other Next.js-compatible platform.
+
+### Vercel Deployment
+
+1. Connect your repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
