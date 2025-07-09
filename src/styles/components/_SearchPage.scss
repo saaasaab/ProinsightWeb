@@ -260,6 +260,7 @@
   border-bottom: 1px solid #2a3a5a;
   text-align: left;
   letter-spacing: 0.01em;
+  text-align: center;
 }
 
 .search-main-content {
@@ -347,7 +348,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 140px;
+  height: 240px;
   margin-bottom: 0.5rem;
 }
 
@@ -485,9 +486,10 @@
   padding: 0.5em 1em;
   font-size: 0.95rem;
   white-space: nowrap;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 2px 8px #0006;
   pointer-events: none;
+
 }
 
 .filter-block-dropdown {
@@ -511,6 +513,9 @@
   margin-top: 0.5rem;
 }
 
+.gold-select__menu-portal{
+  z-index: 1000;
+}
 .gold-select__control {
   background: transparent !important;
   border: none !important;

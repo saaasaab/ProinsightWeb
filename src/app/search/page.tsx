@@ -6,6 +6,12 @@ import { useState } from 'react'
 import { useTheme } from '@/context/ThemeContext'
 import Select from 'react-select'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+const DynamicMap = dynamic(() => import('@/components/MapComponent'), { ssr: false })
+const DynamicSelect = dynamic(() => import('react-select'), { ssr: false })
+
+
+import 'leaflet/dist/leaflet.css'
 
 const PROFESSIONS = [
   'Real Estate Agent',
@@ -62,6 +68,7 @@ export default function SearchPage() {
   // Search bar state
   const [searchValue, setSearchValue] = useState('')
 
+
   return (
     <div className={`search-page ${theme}-theme`}>
       {/* Subtitle/Stats */}
@@ -70,6 +77,27 @@ export default function SearchPage() {
       </div>
 
       <main className="search-main-content">
+       
+
+        {/* Search Bar */}
+        <div className="search-block">
+          <div className="search-block-header">
+            <span className="search-block-label">Search professional, city, or county</span>
+            <InfoTooltip text="Type a name, city, or county to search for professionals." />
+          </div>
+          <div className="search-block-row">
+            <FiSearch className="search-block-icon" />
+            <input
+              className="search-block-input"
+              type="text"
+              placeholder="Search for who you’re looking for..."
+              value={searchValue}
+              onChange={e => setSearchValue(e.target.value)}
+            />
+          </div>
+          <div className="search-block-underline" />
+        </div>
+
         {/* Filter by profession */}
         <div className="filter-block">
           <div className="filter-block-header">
@@ -79,11 +107,11 @@ export default function SearchPage() {
           <div className="filter-block-dropdown">
             <FiFilter className="filter-block-icon" />
             <div className="filter-block-select">
-              <Select
+              <DynamicSelect
                 classNamePrefix="gold-select"
                 options={professionOptions}
                 value={selectedProfession}
-                onChange={option => setSelectedProfession(option)}
+                onChange={(option) => setSelectedProfession(option as { value: string; label: string } | null)}
                 placeholder="No Filters Applied"
                 isClearable
                 menuPlacement="auto"
@@ -112,9 +140,9 @@ export default function SearchPage() {
                   }),
                   clearIndicator: base => ({ ...base, color: '#bfa046' }),
                 }}
-                onMenuClose={() => {}}
-                onMenuOpen={() => {}}
-                onBlur={() => {}}
+                onMenuClose={() => { }}
+                onMenuOpen={() => { }}
+                onBlur={() => { }}
                 theme={selectTheme => ({
                   ...selectTheme,
                   borderRadius: 8,
@@ -132,37 +160,17 @@ export default function SearchPage() {
           <div className="filter-block-underline" />
         </div>
 
-        {/* Search Bar */}
-        <div className="search-block">
-          <div className="search-block-header">
-            <span className="search-block-label">Search professional, city, or county</span>
-            <InfoTooltip text="Type a name, city, or county to search for professionals." />
-          </div>
-          <div className="search-block-row">
-            <FiSearch className="search-block-icon" />
-            <input
-              className="search-block-input"
-              type="text"
-              placeholder="Search for who you’re looking for..."
-              value={searchValue}
-              onChange={e => setSearchValue(e.target.value)}
-            />
-          </div>
-          <div className="search-block-underline" />
-        </div>
-
         {/* Map Section */}
         <Link href="/search/map" className="search-map-section-link">
           <div className="search-map-section" tabIndex={0} role="button">
             <div className="search-block-header">
               <span className="search-block-label">
-                <FiSearch className="search-block-icon" style={{ marginRight: '0.5rem' }} />
                 Find professionals on the map
               </span>
+              <InfoTooltip text="Click the map to view professionals in that area." />
             </div>
             <div className="search-map-preview">
-              {/* Replace with real map component */}
-              <img src="/globe.svg" alt="US Map" className="map-img" />
+              <DynamicMap />
             </div>
           </div>
         </Link>
