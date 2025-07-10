@@ -283,13 +283,20 @@
 }
 
 .search-right-panel {
-  background: #181818;
+  
+  // position: sticky;
+  // top: 1rem;
+}
+.search-results-container{
   border: 1px solid #bfa046;
   border-radius: 12px;
   padding: 1.5rem;
   min-height: 600px;
-  position: sticky;
-  top: 1rem;
+  background: #181818;
+
+
+
+
 }
 
 .search-filter-row {
@@ -562,7 +569,7 @@
 }
 
 .gold-select__menu-portal{
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 .gold-select__control {
   background: transparent !important;
@@ -570,6 +577,7 @@
   box-shadow: none !important;
   min-height: unset !important;
 }
+
 .gold-select__single-value, .gold-select__placeholder, .gold-select__input-container {
   color: #bfa046 !important;
   font-weight: 500;
@@ -634,7 +642,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #bfa046;
 }
@@ -674,6 +681,7 @@
 }
 
 .search-results-list {
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -802,6 +810,7 @@
   gap: 1.5rem;
   max-height: 600px;
   overflow-y: auto;
+  padding-top: 5px;
 }
 
 .professional-card {

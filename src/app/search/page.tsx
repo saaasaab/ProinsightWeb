@@ -10,12 +10,14 @@ import countiesData from '@/data/counties.json'
 import citiesData from '@/data/cities.json'
 import professionsData from '@/data/professions.json'
 import professionCategoriesData from '@/data/professioncategories.json'
+import { useRouter } from 'next/navigation';
 const DynamicMap = dynamic(() => import('@/components/MapComponent'), { ssr: false })
 const DynamicSelect = dynamic(() => import('react-select'), { ssr: false })
 
 
 import 'leaflet/dist/leaflet.css'
 import '@/styles/components/_SearchPage.scss'
+import { stateToFileName } from '@/utils/utils'
 
 // Create a map of category codes to category names for easy lookup
 const categoryMap = professionCategoriesData.reduce((acc, category) => {
@@ -24,59 +26,7 @@ const categoryMap = professionCategoriesData.reduce((acc, category) => {
 }, {} as Record<string, string>)
 
 // State code to file name mapping
-const stateToFileName: Record<string, string> = {
-  'AL': 'Alabama',
-  'AK': 'Alaska',
-  'AZ': 'Arizona',
-  'AR': 'Arkansas',
-  'CA': 'California',
-  'CO': 'Colorado',
-  'CT': 'Connecticut',
-  'DE': 'Delaware',
-  'FL': 'Florida',
-  'GA': 'Georgia',
-  'HI': 'Hawaii',
-  'ID': 'Idaho',
-  'IL': 'Illinois',
-  'IN': 'Indiana',
-  'IA': 'Iowa',
-  'KS': 'Kansas',
-  'KY': 'Kentucky',
-  'LA': 'Louisiana',
-  'ME': 'Maine',
-  'MD': 'Maryland',
-  'MA': 'Massachusetts',
-  'MI': 'Michigan',
-  'MN': 'Minnesota',
-  'MS': 'Mississippi',
-  'MO': 'Missouri',
-  'MT': 'Montana',
-  'NE': 'Nebraska',
-  'NV': 'Nevada',
-  'NH': 'NewHampshire',
-  'NJ': 'NewJersey',
-  'NM': 'NewMexico',
-  'NY': 'NewYork',
-  'NC': 'NorthCarolina',
-  'ND': 'NorthDakota',
-  'OH': 'Ohio',
-  'OK': 'Oklahoma',
-  'OR': 'Oregon',
-  'PA': 'Pennsylvania',
-  'RI': 'RhodeIsland',
-  'SC': 'SouthCarolina',
-  'SD': 'SouthDakota',
-  'TN': 'Tennessee',
-  'TX': 'Texas',
-  'UT': 'Utah',
-  'VT': 'Vermont',
-  'VA': 'Virginia',
-  'WA': 'Washington',
-  'WV': 'WestVirginia',
-  'WI': 'Wisconsin',
-  'WY': 'Wyoming',
-  'DC': 'DistrictOfColumbia'
-}
+
 
 // Transform professions data for easier searching
 const professionsList = professionsData.map(profession => ({
@@ -144,6 +94,7 @@ function InfoTooltip({ text }: { text: string }) {
 
 export default function SearchPage() {
   const { theme } = useTheme()
+  const router = useRouter();
 
   // Recent searches state
   const [recentSearches, setRecentSearches] = useState([
@@ -331,7 +282,6 @@ export default function SearchPage() {
           return cityData.countyCode === countyCode
         }).map(([_cityCode, cityData]) => cityData.cityName)
 
-        console.log('Cities in county:', citiesInCounty)
 
         // Filter professionals by cities in this county
         const allPeople = jsonData.default || jsonData
@@ -353,9 +303,6 @@ export default function SearchPage() {
           person.city && person.city.toLowerCase().includes(cityName.toLowerCase())
         )
       }
-
-      console.log(`Found ${peopleData.length} people for ${result.label}:`, peopleData)
-
       // Set the people data and show results
       setPeopleData(peopleData)
       setShowPeopleResults(true)
@@ -378,7 +325,7 @@ export default function SearchPage() {
       <main className="search-main-content">
         <div className="search-container">
           <div className="search-left-panel">
-           
+
 
             {/* Filter by profession */}
             <div className="filter-block">
@@ -452,7 +399,7 @@ export default function SearchPage() {
                   <InfoTooltip text="Click the map to view professionals in that area." />
                 </div>
                 <div className="search-map-preview">
-                  {/* <DynamicMap /> */}
+                  <DynamicMap />
                 </div>
               </div>
             </Link>
@@ -482,8 +429,8 @@ export default function SearchPage() {
 
           {/* Search Results Panel */}
           <div className="search-right-panel">
-             {/* Search Bar */}
-             <div className="search-block">
+            {/* Search Bar */}
+            <div className="search-block">
               <div className="search-block-header">
                 <span className="search-block-label">Search professional, city, or county</span>
                 <InfoTooltip text="Type a name, city, or county to search for professionals." />
@@ -521,135 +468,145 @@ export default function SearchPage() {
                 </div>
               )} */}
             </div>
-            
-            <div className="search-results-header">
-              <div className="search-results-title-section">
-                <span className="search-results-title">Search Results</span>
-                {showPeopleResults && (
-                  <button
-                    className="back-to-search-btn"
-                    onClick={() => {
-                      setShowPeopleResults(false)
-                      setPeopleData([])
-                    }}
-                  >
-                    Back to Search
-                  </button>
-                )}
-              </div>
-              {searchValue.trim().length >= 2 && !showPeopleResults && (
-                <span className="search-results-count">
-                  Showing {displayedResults.length} of {searchResults.length} results for "{searchValue}"
-                </span>
-              )}
-              {showPeopleResults && (
-                <span className="search-results-count">
-                  {peopleData.length > 0 ? `${peopleData.length} professionals found` : 'No professionals found in this area'}
-                </span>
-              )}
-            </div>
 
-            <div className="search-results-content" onScroll={handleScroll}>
-              {showPeopleResults ? (
-                // Show people results
-                <div className="people-results">
-                  {peopleData.length === 0 ? (
-                    <div className="no-professionals-message">
-                      <h3>No Professionals Found</h3>
-                      <p>There are currently no professionals in this area. Try searching for a different location or profession.</p>
-                      <button
-                        className="back-to-search-btn"
-                        onClick={() => {
-                          setShowPeopleResults(false)
-                          setPeopleData([])
-                        }}
-                      >
-                        Back to Search
-                      </button>
-                    </div>
-                  ) : (
-
-                    <div className="professionals-grid">
-                      {peopleData.map((person, index) => (
-                        <div key={person.uuid || index} className="professional-card">
-                          <div className="professional-avatar">
-                            {person.avatar ? (
-                              <img src={person.avatar} alt={`${person.firstname} ${person.lastname}`} />
-                            ) : (
-                              <div className="avatar-placeholder">
-                                {person.firstname?.[0]}{person.lastname?.[0]}
-                              </div>
-                            )}
-                          </div>
-                          <div className="professional-info">
-                            <h4>{person.firstname} {person.lastname}</h4>
-                            <p className="professional-brokerage">{person.brokerage}</p>
-                            <p className="professional-location">{person.city}, {person.state}</p>
-                            {person.sales && (
-                              <p className="professional-sales">Sales: {person.sales}</p>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+            <div className="search-results-container">
+              <div className="search-results-header">
+                <div className="search-results-title-section">
+                  <span className="search-results-title">Search Results</span>
+                  {showPeopleResults && (
+                    <button
+                      className="back-to-search-btn"
+                      onClick={() => {
+                        setShowPeopleResults(false)
+                        setPeopleData([])
+                      }}
+                    >
+                      Back to Search
+                    </button>
                   )}
                 </div>
-              ) : (
-                // Show regular search results
-                <>
-                  {searchValue.trim().length < 2 ? (
-                    <div className="search-results-empty">
-                      <p>Start typing to see search results</p>
-                    </div>
-                  ) : searchResults.length === 0 ? (
-                    <div className="search-results-empty">
-                      <p>No results found for "{searchValue}"</p>
-                    </div>
-                  ) : (
-                    <div className="search-results-list">
-                      {displayedResults.map((result, index) => (
-                        <div
-                          key={`${result.type}-${index}`}
-                          className="search-result-item"
-                          onClick={() => handleResultClick(result)}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          <div className="result-content">
-                            <span className="result-label">{result.label}</span>
-                            <span className="result-type">{result.type}</span>
-                          </div>
-                          {result.population && (
-                            <span className="result-population">
-                              Population: {result.population.toLocaleString()}
-                            </span>
-                          )}
-                          {result.zipCodes && result.zipCodes.length > 0 && (
-                            <span className="result-zipcodes">
-                              ZIP Codes: {result.zipCodes.slice(0, 3).join(', ')}
-                              {result.zipCodes.length > 3 && ` (+${result.zipCodes.length - 3} more)`}
-                            </span>
-                          )}
-                          {result.categoryName && result.type === 'profession' && (
-                            <span className="result-category">
-                              Category: {result.categoryName}
-                              {result.minimumTransactions > 0 && ` • Min Transactions: ${result.minimumTransactions}`}
-                              {result.isRole && ` • Role`}
-                            </span>
-                          )}
-                        </div>
-                      ))}
+                {searchValue.trim().length >= 2 && !showPeopleResults && (
+                  <span className="search-results-count">
+                    Showing {displayedResults.length} of {searchResults.length} results for "{searchValue}"
+                  </span>
+                )}
+                {showPeopleResults && (
+                  <span className="search-results-count">
+                    {peopleData.length > 0 ? `${peopleData.length} professionals found` : 'No professionals found in this area'}
+                  </span>
+                )}
+              </div>
 
-                      {/* Loading indicator for infinite scroll */}
-                      {isLoadingMore && (
-                        <div className="loading-indicator">
-                          <div className="loading-spinner"></div>
-                          <span>Loading more results...</span>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
+              <div className="search-results-content" onScroll={handleScroll}>
+                {showPeopleResults ? (
+                  // Show people results
+                  <div className="people-results">
+                    {peopleData.length === 0 ? (
+                      <div className="no-professionals-message">
+                        <h3>No Professionals Found</h3>
+                        <p>There are currently no professionals in this area. Try searching for a different location or profession.</p>
+                        <button
+                          className="back-to-search-btn"
+                          onClick={() => {
+                            setShowPeopleResults(false)
+                            setPeopleData([])
+                          }}
+                        >
+                          Back to Search
+                        </button>
+                      </div>
+                    ) : (
+
+                      <div className="professionals-grid">
+                        {peopleData.map((person, index) => (
+                          <Link
+                            key={person.uuid || index}
+                            href={{
+                              pathname: `/search/professionals/${person.uuid}`,
+                              query: { state: person.state }
+                            }}
+                            className="professional-card"
+                            prefetch={false}
+                          >
+                            <div className="professional-avatar">
+                              {person.avatar ? (
+                                <img src={person.avatar} alt={`${person.firstname} ${person.lastname}`} />
+                              ) : (
+                                <div className="avatar-placeholder">
+                                  {person.firstname?.[0]}{person.lastname?.[0]}
+                                </div>
+                              )}
+                            </div>
+                            <div className="professional-info">
+                              <h4>{person.firstname} {person.lastname}</h4>
+                              <p className="professional-brokerage">{person.brokerage}</p>
+                              <p className="professional-location">{person.city}, {person.state}</p>
+                              {person.sales && (
+                                <p className="professional-sales">Sales: {person.sales}</p>
+                              )}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  // Show regular search results
+                  <>
+                    {searchValue.trim().length < 2 ? (
+                      <div className="search-results-empty">
+                        <p>Start typing to see search results</p>
+                      </div>
+                    ) : searchResults.length === 0 ? (
+                      <div className="search-results-empty">
+                        <p>No results found for "{searchValue}"</p>
+                      </div>
+                    ) : (
+                      <div className="search-results-list">
+                        {displayedResults.map((result, index) => (
+                          <div
+                            key={`${result.type}-${index}`}
+                            className="search-result-item"
+                            onClick={() => handleResultClick(result)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div className="result-content">
+                              <span className="result-label">{result.label}</span>
+                              <span className="result-type">{result.type}</span>
+                            </div>
+                            {result.population && (
+                              <span className="result-population">
+                                Population: {result.population.toLocaleString()}
+                              </span>
+                            )}
+                            {result.zipCodes && result.zipCodes.length > 0 && (
+                              <span className="result-zipcodes">
+                                ZIP Codes: {result.zipCodes.slice(0, 3).join(', ')}
+                                {result.zipCodes.length > 3 && ` (+${result.zipCodes.length - 3} more)`}
+                              </span>
+                            )}
+                            {result.categoryName && result.type === 'profession' && (
+                              <span className="result-category">
+                                Category: {result.categoryName}
+                                {result.minimumTransactions > 0 && ` • Min Transactions: ${result.minimumTransactions}`}
+                                {result.isRole && ` • Role`}
+                              </span>
+                            )}
+                          </div>
+                        ))}
+
+                        {/* Loading indicator for infinite scroll */}
+                        {isLoadingMore && (
+                          <div className="loading-indicator">
+                            <div className="loading-spinner"></div>
+                            <span>Loading more results...</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
